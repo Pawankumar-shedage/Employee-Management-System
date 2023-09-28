@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Update Employee </title>
+  </head>
+<body>
+	
+    <div class="container mt-4">`
+        <h1>Edit Employee</h1>
+        
+        <form th:action="@{/save}"  method="post" th:object="${emp}" >
+			
+			
+            <input type="hidden"  name="emp_id" th:value="${emp.emp_id}" />
+            
+            <div class="form-group">
+                <label for="emp_name">Name:</label>
+                <input type="text" class="form-control" name="emp_name" th:value="${emp.emp_name}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="dept_name">Department:</label>
+                <input type="text" class="form-control" name="dept_name" th:value="${emp.dept_name}" required>
+            </div>
+            
+           <!-- <div class="form-group">
+                <label for="salary">Salary:</label>
+                <input type="number" class="form-control" id="salary" th:field="*{salary}" required>
+            </div> -->
+            <br>
+            <button type="submit" class="btn btn-primary">Update Employee</button>
+        </form>
+        <a class="btn btn-secondary mt-2" href="/home">Back to Employee List</a>
+    </div>
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
