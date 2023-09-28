@@ -44,7 +44,7 @@
 	                <th scope="col">ID</th>
 	                <th scope="col">Employee Name</th>
 	                <th scope="col">Department</th>
-	                <!--<th scope="col">Salary</th> -->
+	                <th scope="col">Salary</th> 
 	                <th scope="col">Actions</th>
 	            </tr>
 	        </thead>
@@ -55,6 +55,7 @@
 	                
 	                <td th:text="${emp.emp_name}"></td>
 	                <td th:text="${emp.dept_name}"></td>
+	                <td th:text="${emp.emp_salary}"></td>
 	                
 	                <td>
 	                    <a  th:href="@{/home/edit/{emp_id}(emp_id = ${emp.emp_id})}" class="btn btn-info btn-sm">
